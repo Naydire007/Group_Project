@@ -16,23 +16,31 @@ MongoClient.connect('mongodb://localhost:27017')
     //add here the equivalent to bookingsCollection and bookingsRouter connection
 })
 
-app.post('/api/C02', (req, res) =>{
+app.post('/api/C02', (req, res) => {
     const newData = req.body;
-    if(newData.hasOwnProperty('name') && newData.hasOwnProperty('email'){
-        Collection
+    if (newData.hasOwnProperty("UserName") && newData.hasOwnProperty("email")) {
+            Collection //collection name is needed we need the folders first
         .insertOne(newData)
-        .then((result)=>{
-            res.json(result.ops[0]);
+        .then((result) => {
+          res.json(result.ops[0]);
         })
-        .catch((err)=>{
-            console.error(err);
-            res.status(500);
-            res.json({status: 500, error: err});
-
+        .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({ status: 500, error: err });
         });
+    } else {
+      res.status(400);  // bad request
+      res.send("please make sure all information has been completed");
+    }
+  });
 
-    })
+  app.use('/api/groupProject', bookingsRouter);
+  
+});
 
-    app.listen(5000, function() {
-        console.log(`Grou Project running on port  ${this.address().port}`);
-})
+.catch(console.error);
+
+app.listen(5000, function() {
+console.log(`Group Project running on port ${this.address().port}`);
+});
