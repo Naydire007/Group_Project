@@ -14,7 +14,7 @@ MongoClient.connect('mongodb://localhost:27017')
 .then((client)=> {
     const db = client.db('group_project'); //name of the data base needed (temporarely name added)
     //add here the equivalent to bookingsCollection and bookingsRouter connection
-})
+
 
 app.post('/api/C02', (req, res) => {
     const newData = req.body;
@@ -36,7 +36,7 @@ app.post('/api/C02', (req, res) => {
   });
 
   app.use('/api/groupProject', bookingsRouter);
-  
+
 });
 
 .catch(console.error);
