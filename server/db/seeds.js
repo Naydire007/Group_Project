@@ -1,16 +1,17 @@
 use users;
+db.dropDatabase();
 
-debugger.userInfo.insertMany([
+db.userInfo.insertMany([
     {
-      "Username":"JClarkson"
-      "Name":"Jeremy Clarkson"
-      "Diet":"Omnivore"
+      "Username":"JClarkson",
+      "Name":"Jeremy Clarkson",
+      "Diet":"Omnivore",
       "Transport":"Car"
     },
     {
-        "Username":"Mobsy"
-        "Name":"Moby"
-        "Diet":"Vegan"
+        "Username":"Mobsy",
+        "Name":"Moby",
+        "Diet":"Vegan",
         "Transport":"Bike"
     }
 ])
