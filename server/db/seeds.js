@@ -2,21 +2,15 @@ use users;
 
 debugger.userInfo.insertMany([
     {
-      "Username":
-      "Name":
-      "Diet":
-      "Transport":  
+      "Username":"JClarkson"
+      "Name":"Jeremy Clarkson"
+      "Diet":"Omnivore"
+      "Transport":"Car"
     },
     {
-        "Username":
-        "Name":
-        "Diet":
-        "Transport":  
-    },
-    {
-        "Username":
-        "Name":
-        "Diet":
-        "Transport":
-      }
+        "Username":"Mobsy"
+        "Name":"Moby"
+        "Diet":"Vegan"
+        "Transport":"Bike"
+    }
 ])
